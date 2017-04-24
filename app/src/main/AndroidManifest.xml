@@ -19,23 +19,27 @@
         <activity
             android:name=".Splashscreen"
             android:label="@string/app_name">
-
              <intent-filter>
              <action android:name="android.intent.action.MAIN" />
-
-
              <category android:name="android.intent.category.LAUNCHER" />
              </intent-filter>
         </activity>
+
+
+        <activity
+            android:name=".Login"
+            android:label="@string/title_activity_login" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
         </activity>
 
         <service android:name=".MyFirebaseInstanceIdService">
@@ -49,9 +53,6 @@
             </intent-filter>
         </service>
 
-        <activity
-            android:name=".LoginActivity"
-            android:label="@string/title_activity_login" />
         <activity
             android:name=".upload"
             android:label="@string/title_activity_upload"
@@ -70,11 +71,17 @@
         <activity android:name=".FirebaseUpload">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".ShowUploads"></activity>
+
+        <activity android:name=".ClassAttendance">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

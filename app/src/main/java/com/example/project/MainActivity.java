@@ -92,7 +92,10 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camara) {
+
             // Handle the camera action
+            Intent intent1 = new Intent(this,ClassAttendance.class);
+            startActivity(intent1);
 
             AttendanceFragment fragment = new AttendanceFragment();
             android.support.v4.app.FragmentTransaction fragmentTransaction =
@@ -102,12 +105,12 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_gallery) {
             Intent intent = new Intent(this,FirebaseUpload.class);
             startActivity(intent);
-//
-//            SubmitFragment fragment = new SubmitFragment();
-//            android.support.v4.app.FragmentTransaction fragmentTransaction =
-//                    getSupportFragmentManager().beginTransaction();
-//            fragmentTransaction.replace(R.id.fragment_container, fragment);
-//            fragmentTransaction.commit();
+
+            SubmitFragment fragment = new SubmitFragment();
+            android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
 
         } else if (id == R.id.nav_slideshow) {
             DownloadFragment fragment = new DownloadFragment();
