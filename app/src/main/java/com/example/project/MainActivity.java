@@ -113,6 +113,8 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.commit();
 
         } else if (id == R.id.nav_slideshow) {
+            Intent intent2 = new Intent(this,ShowUploads.class);
+            startActivity(intent2);
             DownloadFragment fragment = new DownloadFragment();
             android.support.v4.app.FragmentTransaction fragmentTransaction =
                     getSupportFragmentManager().beginTransaction();
@@ -143,5 +145,10 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+    public void broadcastIntent(View view){
+        Intent intent = new Intent();
+        intent.setAction("com.example.project.CUSTOM_INTENT");
+        sendBroadcast(intent);
     }
 }
