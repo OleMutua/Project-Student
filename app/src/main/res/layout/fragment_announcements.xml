@@ -2,28 +2,17 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" tools:context="com.example.project.AnnouncementsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Here are our latest announcements"
+    <TextView
+        android:id="@+id/tvNotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New notifications will be shown here"
         android:clickable="false"
         android:textColor="#000000"
         android:textSize="30dp"
-        android:layout_marginTop="216dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:textStyle="italic"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:layout_centerVertical="true"
         android:textAlignment="center"/>
-
-    <Button
-        android:text="Broadcast Intent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="110dp"
-        android:id="@+id/btnStartService"
-        android:onClick="broadcastIntent"/>
-
 </RelativeLayout>

@@ -9,13 +9,36 @@ import android.support.v7.app.NotificationCompat;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
+
+
 /**
  * Created by Musee on 1/11/2017.
  */
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
+    public final static String BROADCAST_ACTION_NEW_NOTIFICATION = "com.example.project.NEW_NOTIFICATION";
+
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
+        sendToActivity(remoteMessage);
+    }
+
+    /**
+     * Send the notification body to activity
+     * @param remoteMessage
+     */
+    private void sendToActivity(RemoteMessage remoteMessage){
+        Intent intent = new Intent();
+        intent.setAction(BROADCAST_ACTION_NEW_NOTIFICATION);
+        intent.putExtra("notification", remoteMessage.getNotification().getBody());
+        getApplicationContext().sendBroadcast(intent);
+    }
+
+    /**
+     * Show notification on the notification bar
+     * @param remoteMessage
+     */
+    private void showNotification(RemoteMessage remoteMessage){
         Intent intent = new Intent(this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(this,0,intent,PendingIntent.FLAG_ONE_SHOT);
