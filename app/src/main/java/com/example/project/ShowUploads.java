@@ -53,6 +53,8 @@ public class ShowUploads extends AppCompatActivity {
         progressDialog.show();
         mDatabase = FirebaseDatabase.getInstance().getReference(constants.DATABASE_PATH_UPLOADS);
 
+        mDatabase.keepSynced(true);
+
         //adding an event listener to fetch values
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
